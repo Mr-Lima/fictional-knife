@@ -1,0 +1,5 @@
+config: .wotanrc.yaml
+exclude:
+  - src/generated/**
+project:
+  - tsconfig.json
