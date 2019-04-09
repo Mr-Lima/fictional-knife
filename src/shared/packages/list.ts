@@ -10,12 +10,12 @@ class List<T extends Comparable<T>> implements Package<List<T>> {
     this._processedElements = [];
   }
 
-  split(parts: number): List<T>[] {
+  split(length: number): List<T>[] {
     let lists = [];
     let myArray = this._elements;
 
     while (myArray.length) {
-      lists.push(myArray.splice(0, parts));
+      lists.push(myArray.splice(0, length));
     }
 
     const result = lists.map(list => {
@@ -69,6 +69,10 @@ class List<T extends Comparable<T>> implements Package<List<T>> {
 
   public get processedElements(): T[] {
     return this._processedElements;
+  }
+
+  public set setProcessedElements(v: T[]) {
+    this._processedElements = v;
   }
 }
 
